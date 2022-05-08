@@ -1,6 +1,6 @@
 # MacBook Pro M1 Software Development Setup (macOS Config)
 
-![MacBook Pro M1](https://raw.githubusercontent.com/sebastienrousseau/maccfg/master/assets/mbp834x275.svg)
+![MacBook Pro M1](https://raw.githubusercontent.com/sebastienrousseau/maccfg/main/assets/mbp834x275.svg)
 
 ## Welcome
 
@@ -62,31 +62,25 @@ Within this release you'll find the following files and folders setup:
 .
 ├── CODEOWNERS
 ├── COPYRIGHT
-├── homebrew
-│   ├── homebrew-casks.sh
-│   ├── homebrew-formulae.sh
-│   └── homebrew-qlplugins.sh
 ├── LICENSE
 ├── README.md
-├── doc
-│   └── README.md
-├── macOS
-│   ├── macOS-appstore.sh
-│   ├── macOS-defaults.sh
-│   ├── macOS-screensavers.sh
-│   └── macOS-setup.sh
-└── media
-    ├── MesloLGS NF Bold Italic.ttf
-    ├── MesloLGS NF Bold.ttf
-    ├── MesloLGS NF Italic.ttf
-    ├── MesloLGS NF License.txt
-    ├── MesloLGS NF Regular.ttf
-    ├── dotfiles-256x269.png
-    ├── homebrew-256x256.png
-    ├── iTerm.json
-    ├── mbp834x275.png
-    ├── mbp834x275.svg
-    └── rosetta-480x233.png
+├── assets
+│   ├── mbp834x275.svg
+│   └── rosetta-480x233.svg
+├── package.json
+└── src
+    ├── homebrew
+    │   ├── hombrew-fonts.sh
+    │   ├── homebrew-casks.sh
+    │   ├── homebrew-formulae.sh
+    │   └── homebrew-qlplugins.sh
+    └── macOS
+        ├── macOS-appstore.sh
+        ├── macOS-defaults.sh
+        ├── macOS-screensavers.sh
+        └── macOS-setup.sh
+
+4 directories, 15 files
 ```
 
 ## Set up your Mac
