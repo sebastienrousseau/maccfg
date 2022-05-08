@@ -118,7 +118,7 @@ Install Rosetta2 using the Terminal:
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 ```
 
-![Rosetta 2](https://raw.githubusercontent.com/sebastienrousseau/maccfg/master/assets/rosetta-480x233.svg)
+![Rosetta 2](https://raw.githubusercontent.com/sebastienrousseau/maccfg/main/assets/rosetta-480x233.svg)
 
 ### Install Homebrew
 
@@ -257,11 +257,11 @@ For transparency into our release cycle and in striving to maintain backward com
 
 ## Contributing
 
-Please read carefully through our [Contributing Guidelines](https://github.com/sebastienrousseau/maccfg/blob/master/.github/CONTRIBUTING.md) for further details on the process for submitting pull requests to us.
+Please read carefully through our [Contributing Guidelines](https://github.com/sebastienrousseau/maccfg/blob/main/.github/CONTRIBUTING.md) for further details on the process for submitting pull requests to us.
 
 ## Rules
 
-We are committed to preserving and fostering a diverse, welcoming community. Please read our [Code of Conduct](https://github.com/sebastienrousseau/maccfg/blob/master/.github/CODE-OF-CONDUCT.md).
+We are committed to preserving and fostering a diverse, welcoming community. Please read our [Code of Conduct](https://github.com/sebastienrousseau/maccfg/blob/main/.github/CODE-OF-CONDUCT.md).
 
 ## Our Values
 
@@ -271,7 +271,7 @@ We are committed to preserving and fostering a diverse, welcoming community. Ple
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/sebastienrousseau/maccfg/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/sebastienrousseau/maccfg/blob/main/LICENSE) file for details
 
 ## Acknowledgements
 

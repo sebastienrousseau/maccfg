@@ -12,9 +12,6 @@
         "source": "git",
         "target": "git://github.com/sebastienrousseau/maccfg.git"
     },
-    "bin": {
-        "maccfg": "index.js"
-    },
     "bugs": {
         "url": "https://github.com/sebastienrousseau/maccfg/issues"
     },
@@ -71,7 +68,6 @@
     "license": "MIT",
     "license_URI": "http://www.opensource.org/licenses/mit-license.php",
     "lockfileVersion": 1,
-    "main": "index.js",
     "name": "@sebastienrousseau/maccfg",
     "publishConfig": {
         "access": "public",
