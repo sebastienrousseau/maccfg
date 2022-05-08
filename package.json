@@ -27,7 +27,7 @@
         "rimraf": "^3.0.2"
     },
     "directories": {
-        "src": "./src"        
+        "src": "./src"
     },
     "engines": {
         "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
@@ -48,26 +48,25 @@
     ],
     "homepage": "https://maccfg.com",
     "keywords": [
-        "base64",
-        "complex",
-        "crypto",
-        "cryptography",
-        "dictionary",
-        "entropy",
-        "encryption",
-        "memorable",
-        "mit-license",
-        "open-source",
-        "openssl",
-        "pass",
-        "passgen",
-        "passphrase",
-        "macOS Config",
+        "apple",
+        "config",
+        "configuration-management",
+        "devops",
+        "dev-tools",
+        "homebrew",
+        "mac-setup",
+        "mac",
+        "macbook-configuration",
+        "macbook-pro",
+        "macbook-setup",
         "maccfg",
-        "preprocessor",
-        "random",
-        "secure",
-        "security"
+        "macos-config",
+        "macos-setup",
+        "macos",
+        "macosx",
+        "osx-setup",
+        "preferences",
+        "setup"
     ],
     "license": "MIT",
     "license_URI": "http://www.opensource.org/licenses/mit-license.php",
@@ -94,7 +93,7 @@
         "filesize:distribution": "filesizes dist/ > dist/Report.txt",
         "lint:markdown": "remark \"./*.md\" \"./src/**/*.md\"",
         "release:prepare": "npm publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
-        "release:publish": "npm publish --access public --ignore-scripts --@OWNER:registry='https://registry.npmjs.org'"        
+        "release:publish": "npm publish --access public --ignore-scripts --@OWNER:registry='https://registry.npmjs.org'"
     },
     "type": "module",
     "version": "0.0.1"

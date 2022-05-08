@@ -70,7 +70,7 @@ Within this release you'll find the following files and folders setup:
 ├── package.json
 └── src
     ├── homebrew
-    │   ├── hombrew-fonts.sh
+    │   ├── homebrew-fonts.sh
     │   ├── homebrew-casks.sh
     │   ├── homebrew-formulae.sh
     │   └── homebrew-qlplugins.sh
@@ -136,7 +136,7 @@ Open your Terminal and run the commands below, and input your computer’s passw
 when prompted:
 
 ``` shell
-chmod +x ./macOS/macOS-setup.sh && sh ./macOS/macOS-setup.sh
+chmod +x ./src/macOS/macOS-setup.sh && sh ./src/macOS/macOS-setup.sh
 ```
 
 The script will install the following softwares:
@@ -173,7 +173,7 @@ Homebrew Cask extends Homebrew and brings its elegance, simplicity, and speed to
 Open your Terminal and run the commands below:
 
 ``` shell
-chmod +x ./homebrew/homebrew-casks.sh && sh ./homebrew/homebrew-casks.sh
+chmod +x ./src/homebrew/homebrew-casks.sh && sh ./src/homebrew/homebrew-casks.sh
 ```
 
 #### Homebrew Fonts
@@ -183,7 +183,7 @@ Caskroom Fonts lets you manage fonts from the command line through Homebrew Cask
 Open your Terminal and run the commands below to install a few selected fonts:
 
 ``` shell
-chmod +x ./homebrew/homebrew-fonts.sh && sh ./homebrew/homebrew-fonts.sh
+chmod +x ./src/homebrew/homebrew-fonts.sh && sh ./src/homebrew/homebrew-fonts.sh
 ```
 
 You now have quick access to 1946 (at the time of writing) freely-distributable
@@ -197,7 +197,7 @@ Homebrew Formulae is an online package browser for Homebrew – the macOS (and L
 Open your Terminal and run the commands below:
 
 ``` shell
-chmod +x ./homebrew/homebrew-formulae.sh && sh ./homebrew/homebrew-formulae.sh
+chmod +x ./src/homebrew/homebrew-formulae.sh && sh ./src/homebrew/homebrew-formulae.sh
 ```
 
 #### Homebrew QLPlugins
@@ -209,7 +209,7 @@ You can list your current plugins with the command `qlmanage -m plugins`.
 Simply open Terminal on your computer and type the command listed below to install our curated list of Quick Look plugins for developers.
 
 ``` shell
-chmod +x ./homebrew/homebrew-qlplugins.sh && sh ./homebrew/homebrew-qlplugins.sh
+chmod +x ./src/homebrew/homebrew-qlplugins.sh && sh ./src/homebrew/homebrew-qlplugins.sh
 ```
 
 That’s it you’re done with Homebrew!
@@ -223,7 +223,7 @@ The macOS defaults tool works directly with the macOS preferences subsystem and 
 Open your Terminal and run the commands below:
 
 ``` shell
-chmod +x ./macOS/macOS-defaults.sh && sh ./macOS/macOS-defaults.sh
+chmod +x ./src/macOS/macOS-defaults.sh && sh ./src/macOS/macOS-defaults.sh
 ```
 
 #### macOS Screensavers
@@ -234,8 +234,7 @@ Explore our curated list of screensavers for macOS from
 Open your Terminal and run the commands below:
 
 ``` shell
-chmod +x ./macOS/macOS-screensavers.sh; 
-sh ./macOS/macOS-screensavers.sh;
+chmod +x ./src/macOS/macOS-screensavers.sh && sh ./src/macOS/macOS-screensavers.sh
 ```
 
 #### App Store Softwares
@@ -245,8 +244,7 @@ Explore our curated list of App Store softwares using the Mac App Store command-
 Open your Terminal and run the commands below:
 
 ``` shell
-chmod +x ./macOS/macOS-appstore.sh;
-sh ./macOS/macOS-appstore.sh;
+chmod +x ./src/macOS/macOS-appstore.sh && sh ./src/macOS/macOS-appstore.sh
 ```
 
 ## Semantic Versioning Policy
