@@ -40,10 +40,6 @@ mas install 975937182
 printf "%s\n" "Getting JSON Peep for Safari."
 mas install 1458969831
 
-# Kaleidoscope - Spot and merge differences in text and image files or folders.
-printf "%s\n" "Getting Kaleidoscope - Spot and merge differences in text and image files or folders."
-mas install 587512244
-
 # Kindle - Interface for reading and syncing eBooks.
 printf "%s\n" "Getting Kindle - Interface for reading and syncing eBooks."
 mas install 405399194
@@ -51,10 +47,6 @@ mas install 405399194
 # Simple HTTP Server - Simple zero-configuration command-line HTTP server.
 printf "%s\n" "Getting Simple HTTP Server - Simple zero-configuration command-line HTTP server."
 mas install 441002840
-
-# Swift Playgrounds - Learn real coding the fun way.
-printf "%s\n" "Getting Swift Playgrounds - Learn real coding the fun way."
-mas install 1496833156
 
 # Xcode - Developer Tools
 printf "%s\n" "Getting Xcode - Developer Tools."
