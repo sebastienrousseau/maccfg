@@ -89,8 +89,8 @@
         "filesize:distribution": "filesizes dist/ > dist/Report.txt",
         "lint:markdown": "remark \"./*.md\" \"./src/**/*.md\"",
         "release:prepare": "npm publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
-        "release:publish": "npm publish --access public --ignore-scripts --@OWNER:registry='https://registry.npmjs.org'"
+        "release": "npm publish --access public --ignore-scripts --@OWNER:registry='https://registry.npmjs.org'"
     },
     "type": "module",
-    "version": "0.0.1"
+    "version": "0.0.2"
 }
