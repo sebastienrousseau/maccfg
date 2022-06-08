@@ -6,7 +6,7 @@
 #|_| |_| |_|\__,_|\___|\___/|____/   \____\___/|_| |_|_| |_|\__, |
 #                                                           |___/
 #
-# macOS Config v0.0.1
+# macOS Config v0.0.2
 # https://maccfg.com
 #
 # Copyright (c) Sebastien Rousseau 2022. All rights reserved
@@ -15,7 +15,7 @@
 
 # Mac ScreenSaver https://github.com/agarrharr/awesome-macos-ScreenSavers
 
-# todo: Check when below ScreenSavers are available for Big Sur
+# TODO: Check when below ScreenSavers are available for Big Sur
 
 printf "%s\n" "Getting Awesome macOS ScreenSavers."
 

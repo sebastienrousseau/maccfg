@@ -6,7 +6,7 @@
 #|_| |_| |_|\__,_|\___|\___/|____/   \____\___/|_| |_|_| |_|\__, |
 #                                                           |___/
 #
-# macOS Config v0.0.1
+# macOS Config v0.0.2
 # https://maccfg.com
 #
 # Copyright (c) Sebastien Rousseau 2022. All rights reserved
@@ -16,6 +16,6 @@
 brew tap homebrew/cask-fonts
 
 # brew search font-
-brew install –cask font-open-sans           # Open Sans is a humanist sans serif typeface designed by Steve Matteson, Type Director of Ascender Corp.
-brew cask install font-firacode-nerd-font   # Free monospaced font with programming ligatures.
-brew install --cask font-victor-mono        # A programming font with semi-connected cursive italics and symbol ligatures.
+brew install -–cask font-open-sans               # Open Sans is a humanist sans serif typeface designed by Steve Matteson, Type Director of Ascender Corp.
+brew install --cask font-fira-code-nerd-font    # Fira Code Nerd Font is a free, open-source font that is designed to be used with Fira Code.
+brew install --cask font-victor-mono            # Victor Mono is a free, open-source font that is designed to be used with Fira Code.
