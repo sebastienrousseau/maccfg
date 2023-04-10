@@ -21,7 +21,7 @@
         "filesizes": "^0.1.2",
         "mkdirp": "^3.0.0",
         "remark": "14.0.2",
-        "rimraf": "^4.1.1"
+        "rimraf": "^5.0.0"
     },
     "directories": {
         "src": "./src"
