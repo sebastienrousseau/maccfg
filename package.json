@@ -19,7 +19,7 @@
     "description": "A fast, simple and powerful open-source utility tool for generating strong, unique and random passwords.",
     "devDependencies": {
         "filesizes": "^0.1.2",
-        "mkdirp": "^2.1.1",
+        "mkdirp": "^3.0.0",
         "remark": "14.0.2",
         "rimraf": "^4.1.1"
     },
