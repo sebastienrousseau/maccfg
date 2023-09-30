@@ -1,5 +1,5 @@
 {
-    "author": "Sebastien Rousseau <hello@maccfg.com> (https://github.com/sebastienrousseau/maccfg)",
+    "author": "Sebastien Rousseau <contact@maccfg.com> (https://github.com/sebastienrousseau/maccfg)",
     "autoupdate": {
         "fileMap": [
             {
@@ -15,19 +15,17 @@
     "bugs": {
         "url": "https://github.com/sebastienrousseau/maccfg/issues"
     },
-    "dependencies": {},
-    "description": "A fast, simple and powerful open-source utility tool for generating strong, unique and random passwords.",
+    "description": "A guide to getting your Mac M-Series ready for Software Development.",
     "devDependencies": {
         "filesizes": "^0.1.2",
-        "mkdirp": "^3.0.0",
-        "remark": "14.0.3",
-        "rimraf": "^5.0.0"
+        "mkdirp": "^3.0.1",
+        "rimraf": "^5.0.5"
     },
     "directories": {
         "src": "./src"
     },
     "engines": {
-        "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+        "node": "^10.19.0 || ^14.13.1 || >=16.0.0"
     },
     "files": [
         "/COPYRIGHT",
@@ -78,19 +76,19 @@
         "url": "git+https://github.com/sebastienrousseau/maccfg.git"
     },
     "scripts": {
-        "build": "npm run lint:markdown && npm run build:maccfg && cat ./package.json | grep -v '\"private\":' > dist/package.json && npm pack ./dist",
-        "build:maccfg": "npm run clean:dist && npm run create:directory && npm run copy:src && npm run copy:readme && npm run copy:license && npm run copy:copyright && npm run filesize:distribution",
+        "build:maccfg": "pnpm run clean:dist && pnpm run create:directory && pnpm run copy:src && pnpm run copy:readme && pnpm run copy:license && pnpm run copy:makefile && pnpm run copy:copyright && pnpm run filesize:distribution",
+        "build": "pnpm run build:maccfg && cat ./package.json | grep -v '\"private\":' > dist/package.json && pnpm pack ./dist",
         "clean:dist": "rimraf \"dist/\"",
         "copy:copyright": "cp COPYRIGHT dist/",
         "copy:license": "cp LICENSE dist/",
+        "copy:makefile": "cp Makefile dist/",
         "copy:readme": "cp README.md dist/",
         "copy:src": "cp -R ./src dist/src",
         "create:directory": "mkdirp ./dist",
         "filesize:distribution": "filesizes dist/ > dist/Report.txt",
-        "lint:markdown": "remark \"./*.md\" \"./src/**/*.md\"",
-        "release:prepare": "npm publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
-        "release": "npm publish --access public --ignore-scripts --@OWNER:registry='https://registry.npmjs.org'"
+        "release:prepare": "pnpm run publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
+        "release:publish": "pnpm run publish --access public --ignore-scripts --@OWNER:registry='https://registry.npmjs.org'"
     },
     "type": "module",
-    "version": "0.0.2"
+    "version": "0.0.3"
 }

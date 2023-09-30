@@ -6,7 +6,7 @@
 #|_| |_| |_|\__,_|\___|\___/|____/   \____\___/|_| |_|_| |_|\__, |
 #                                                           |___/
 #
-# macOS Config v0.0.2
+# macOS Config v0.0.3
 # https://maccfg.com
 #
 # Copyright (c) Sebastien Rousseau 2022. All rights reserved
@@ -18,7 +18,7 @@ masInstall() {
     if command -v mas >/dev/null; then
         printf "%s\n" "Already up-to-date."
     else
-        printf "%s\n" "Getting mas-cli - a simple command line interface for the Mac App Store."    
+        printf "%s\n" "Getting mas-cli - a simple command line interface for the Mac App Store."
         brew install mas
     fi
 }
@@ -56,18 +56,6 @@ mas install 497799835
 printf "%s\n" "Getting WhatsApp Desktop - Desktop client for WhatsApp."
 mas install 1147396723
 
-# Byword - Markdown app for writing in plain text efficiently. 
+# Byword - Markdown app for writing in plain text efficiently.
 printf "%s\n" "Getting Byword - Markdown app for writing in plain text efficiently."
 mas install 420212497
-
-# Keynote - Build stunning presentations.
-printf "%s\n" "Getting Keynote - Build stunning presentations."
-mas install 409183694
-
-# Numbers - Create impressive spreadsheets.
-printf "%s\n" "Getting Numbers - Create impressive spreadsheets."
-mas install 409203825
-
-# Pages - Documents that stand apart.
-printf "%s\n" "Pages - Documents that stand apart."
-mas install 409201541

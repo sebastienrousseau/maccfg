@@ -1,77 +1,68 @@
-# MacBook Pro M1 Software Development Setup (macOS Config)
+# Mac M-Series Software Development Setup Guide
 
-![MacBook Pro M1](https://raw.githubusercontent.com/sebastienrousseau/maccfg/main/assets/mbp834x275.svg)
+![Mac M-Series][00]
 
-## Welcome
+Welcome to the ultimate guide for setting up your Mac M-Series for software
+development. Equip your Mac with the best tools and configurations to boost your
+coding experience.
 
-A guide to getting your MacBook Pro M1 ready for Software Development. You can
-set up and start using your new Mac in no time at all with these free resources
-and user guides.
+## What's Inside?
+
+-   Essential tool installations: Homebrew, Xcode, and more.
+-   Terminal & shell configurations.
+-   Must-have software and Quick Look plugins.
+-   Customizations to enhance your macOS experience and productivity.
+
+Dive in to transform your M-Series Mac into a developer's paradise!
 
 ## Table of Contents
 
--   [MacBook Pro M1 Software Development Setup (macOS Config)](#macbook-pro-m1-software-development-setup-macos-config)
-    -   [Welcome](#welcome)
-    -   [Table of Contents](#table-of-contents)
-    -   [MacBook Pro M1 at a glance](#macbook-pro-m1-at-a-glance)
-    -   [In this repository](#in-this-repository)
-    -   [Set up your Mac](#set-up-your-mac)
-    -   [Get Started](#get-started)
-        -   [Open Terminal](#open-terminal)
-        -   [Install Rosetta 2 on your Mac](#install-rosetta-2-on-your-mac)
-        -   [Install Homebrew](#install-homebrew)
-            -   [macOS Setup](#macos-setup)
-            -   [Add Homebrew to your PATH](#add-homebrew-to-your-path)
-            -   [Add Homebrew to your `.zshrc` file](#add-homebrew-to-your-zshrc-file)
-            -   [Homebrew Casks](#homebrew-casks)
-            -   [Homebrew Fonts](#homebrew-fonts)
-            -   [Homebrew Formulae](#homebrew-formulae)
-            -   [Homebrew QLPlugins](#homebrew-qlplugins)
-        -   [Install macOS Preferences](#install-macos-preferences)
-            -   [macOS defaults](#macos-defaults)
-            -   [macOS Screensavers](#macos-screensavers)
-            -   [App Store Softwares](#app-store-softwares)
-    -   [Semantic Versioning Policy](#semantic-versioning-policy)
-    -   [Changelog](#changelog)
-    -   [Contributing](#contributing)
-    -   [Rules](#rules)
-    -   [Our Values](#our-values)
-    -   [License](#license)
-    -   [Acknowledgements](#acknowledgements)
+- [Mac M-Series Software Development Setup Guide](#mac-m-series-software-development-setup-guide)
+  - [What's Inside?](#whats-inside)
+  - [Table of Contents](#table-of-contents)
+  - [Mac M-Series at a glance](#mac-m-series-at-a-glance)
+  - [Repository Contents](#repository-contents)
+  - [Setting Up Your Mac](#setting-up-your-mac)
+  - [Kickstart Your Development Setup](#kickstart-your-development-setup)
+    - [1. Initial Steps](#1-initial-steps)
+    - [2. Install macOS Preferences](#2-install-macos-preferences)
+    - [3. Add Homebrew to your PATH](#3-add-homebrew-to-your-path)
+    - [4. Add Homebrew to your `.zshrc` file](#4-add-homebrew-to-your-zshrc-file)
+  - [Enhancing Your Mac with Homebrew Configurations](#enhancing-your-mac-with-homebrew-configurations)
+    - [1. **GUI Applications with Homebrew Casks**](#1-gui-applications-with-homebrew-casks)
+    - [2. Font Management with Caskroom Fonts](#2-font-management-with-caskroom-fonts)
+    - [3. Browse Packages with Homebrew Formulae](#3-browse-packages-with-homebrew-formulae)
+    - [4. Enhanced File Preview with Homebrew QLPlugins](#4-enhanced-file-preview-with-homebrew-qlplugins)
+  - [Customizing Your macOS Experience](#customizing-your-macos-experience)
+    - [1. Setting macOS Defaults](#1-setting-macos-defaults)
+    - [2. Discover App Store Treasures](#2-discover-app-store-treasures)
+  - [Versioning \& Updates](#versioning--updates)
+  - [How to Contribute](#how-to-contribute)
+  - [Community \& Values](#community--values)
+  - [Licensing](#licensing)
+  - [Shoutouts \& Credits](#shoutouts--credits)
 
-## MacBook Pro M1 at a glance
+## Mac M-Series at a glance
 
-Starting with certain models introduced in late 2020, Apple began the transition
-from Intel processors to Apple silicon in Mac computers.
+Apple ushered in a new era in late 2020 by transitioning from Intel processors
+to its Apple Silicon in Mac computers, introducing the Mac M-Series.
 
-Mac computers with Apple silicon:
+## Repository Contents
 
--   Mac Studio (2022)
--   MacBook Pro (14-inch, 2021)
--   MacBook Pro (16-inch, 2021)
--   iMac (24-inch, M1, 2021)
--   Mac mini (M1, 2020)
--   MacBook Air (M1, 2020)
--   MacBook Pro (13-inch, M1, 2020)
-  
-## In this repository
-
-Within this release you'll find the following files and folders setup:
+Discover the source code, recommended software, tools, and libraries for the
+M-Series Development Guide in this repository.
 
 ```shell
-.
-├── CODEOWNERS
 ├── COPYRIGHT
 ├── LICENSE
+├── Makefile
 ├── README.md
-├── assets
-│   ├── mbp834x275.svg
-│   └── rosetta-480x233.svg
+├── Report.txt
 ├── package.json
 └── src
     ├── homebrew
-    │   ├── homebrew-fonts.sh
     │   ├── homebrew-casks.sh
+    │   ├── homebrew-fonts.sh
     │   ├── homebrew-formulae.sh
     │   └── homebrew-qlplugins.sh
     └── macOS
@@ -80,74 +71,47 @@ Within this release you'll find the following files and folders setup:
         ├── macOS-screensavers.sh
         └── macOS-setup.sh
 
-4 directories, 15 files
+4 directories, 14 files
 ```
 
-## Set up your Mac
+## Setting Up Your Mac
 
--   [Set up your Mac](https://support.apple.com/en-gb/guide/macbook-pro/apd831707cb3/mac)
-with Apple MacBook Pro Essentials documentation.
+Before diving into the development setup, ensure your Mac is ready.
+Follow
+[Apple's official documentation](https://support.apple.com/en-gb/guide/macbook-pro/apd831707cb3/mac)
+for a smooth setup.
 
-## Get Started
+## Kickstart Your Development Setup
 
-This repository contains the source code of multiple customized macOS
-Configurations files.
+Once your Mac is set up, you can begin installing the essential tools for
+software development.
 
-Check out our selection of commercial and open source software, tools and
-libraries that are available for use.
+### 1. Initial Steps
 
-You’ll find new ways to enhance your software development and productivity.
+-   **Open Terminal**: Access through Launchpad or find it in `/Applications/Utilities`.
+-   **Install Xcode Command Line Tools**: Run `xcode-select --install` in Terminal.
+-   **Install Rosetta 2**: Run `/usr/sbin/softwareupdate --install-rosetta --agree-to-license` in Terminal.
 
-### Open Terminal
+### 2. Install macOS Preferences
 
-On your Mac, do one of the following:
-
--   Click the Launchpad icon  in the Dock, type Terminal in the search field, then
-click Terminal.
--   In the Finder, open the `/Applications/Utilities` folder, then double-click
-Terminal.
-
-### Install Rosetta 2 on your Mac
-
-Rosetta 2 enables a Mac with Apple silicon to use apps built for a Mac with an
-Intel processor.
-
-Install Rosetta2 using the Terminal:
+-   Open Terminal and run the following command:
 
 ``` shell
-/usr/sbin/softwareupdate --install-rosetta --agree-to-license
+chmod +x ./src/macOS/macOS-setup.sh && sh ./src/macOS/macOS-setup.sh`
 ```
 
-![Rosetta 2](https://raw.githubusercontent.com/sebastienrousseau/maccfg/main/assets/rosetta-480x233.svg)
-
-### Install Homebrew
-
-Homebrew supports the MacBook Pro M1 chip (Apple silicon) beginning with the release of
-Homebrew 3.0.0 in February 2021.
-
-The script installs Homebrew to its preferred prefix `/opt/homebrew` for Apple
-Silicon, which is not part of the default shell $PATH. You'll need to configure
-your shell environment so Homebrew packages are found and take priority over
-pre-installed tools.
-
-#### macOS Setup
-
-Open your Terminal and run the commands below, and input your computer’s password
-when prompted:
-
-``` shell
-chmod +x ./src/macOS/macOS-setup.sh && sh ./src/macOS/macOS-setup.sh
-```
-
-The script will install the following softwares:
+The script will install the following software:
 
 -   **Homebrew** - The Missing Package Manager for macOS (or Linux),
 -   The **XCode Command Line Tool**,
--   The **‘locate’ Command** - To track down files, file type, app, extension, etc.
+-   The **‘locate’ Command** - To track down files, file type, app, extension,
+    etc.
 
-#### Add Homebrew to your PATH
+### 3. Add Homebrew to your PATH
 
-You will need to add Homebrew to your `PATH`.
+You will need to add Homebrew to your `PATH` environment variable. To do so:
+
+-   Open terminal and run the following command:
 
 ``` shell
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/[your-user-name]/.zprofile
@@ -156,7 +120,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 then restart your terminal.
 
-#### Add Homebrew to your `.zshrc` file
+### 4. Add Homebrew to your `.zshrc` file
 
 Add Homebrew to your path, edit your `.zshrc` file and add the following at
 the bottom.
@@ -166,120 +130,125 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH=/opt/homebrew/sbin:$PATH
 ```
 
-#### Homebrew Casks
+## Enhancing Your Mac with Homebrew Configurations
 
-Homebrew Cask extends Homebrew and brings its elegance, simplicity, and speed to the installation and management of GUI macOS applications such as Atom and Google Chrome.
+Dive deep into the power of Homebrew by extending its capabilities. Here's how
+you can utilize Homebrew to its fullest:
 
-Open your Terminal and run the commands below:
+### 1. **GUI Applications with Homebrew Casks**
+
+Homebrew Cask elevates Homebrew by simplifying the installation and management
+of GUI macOS applications, including popular ones like Atom and Google Chrome.
+
+To get started with Homebrew Casks:
 
 ``` shell
 chmod +x ./src/homebrew/homebrew-casks.sh && sh ./src/homebrew/homebrew-casks.sh
 ```
 
-#### Homebrew Fonts
+### 2. Font Management with Caskroom Fonts
 
-Caskroom Fonts lets you manage fonts from the command line through Homebrew Cask.
+Harness the power of Caskroom Fonts to manage a vast collection of fonts
+directly from your terminal through Homebrew Cask.
 
-Open your Terminal and run the commands below to install a few selected fonts:
+Install a curated selection of fonts:
 
 ``` shell
 chmod +x ./src/homebrew/homebrew-fonts.sh && sh ./src/homebrew/homebrew-fonts.sh
 ```
 
-You now have quick access to 1946 (at the time of writing) freely-distributable
-fonts. You can search, install, and uninstall them the same way you would any
-application through Homebrew Cask.
+Enjoy access to over 1946 freely-distributable fonts. Search, install, or
+uninstall them just like any Homebrew Cask application.
 
-#### Homebrew Formulae
+### 3. Browse Packages with Homebrew Formulae
 
-Homebrew Formulae is an online package browser for Homebrew – the macOS (and Linux) package manager.
+Homebrew Formulae serves as an online package browser specifically for Homebrew,
+catering to both macOS and Linux.
 
-Open your Terminal and run the commands below:
+To utilize Homebrew Formulae:
 
 ``` shell
 chmod +x ./src/homebrew/homebrew-formulae.sh && sh ./src/homebrew/homebrew-formulae.sh
 ```
 
-#### Homebrew QLPlugins
+### 4. Enhanced File Preview with Homebrew QLPlugins
 
-Quick Look offers a fast, full-size preview of nearly any kind of file without opening the file. QuickLook plugins are invoked when we hit the SPACE bar in Finder to get a quick preview of the file, without opening it.
+Experience Quick Look's capability to swiftly preview almost any file type without the need to open them. Trigger QuickLook plugins with a simple SPACE bar press in Finder.
 
-You can list your current plugins with the command `qlmanage -m plugins`.
+Check your current plugins with:
 
-Simply open Terminal on your computer and type the command listed below to install our curated list of Quick Look plugins for developers.
+``` shell
+qlmanage -m plugins
+```
+
+Install a handpicked list of Quick Look plugins tailored for developers:
 
 ``` shell
 chmod +x ./src/homebrew/homebrew-qlplugins.sh && sh ./src/homebrew/homebrew-qlplugins.sh
 ```
 
-That’s it you’re done with Homebrew!
+Congratulations, you've now harnessed the complete power of Homebrew!
 
-### Install macOS Preferences
+## Customizing Your macOS Experience
 
-#### macOS defaults
+Tailor your Mac settings and preferences to fit your needs. Here's a
+step-by-step guide to get your macOS looking and behaving the way you want:
 
-The macOS defaults tool works directly with the macOS preferences subsystem and is used by many apps in macOS to manage preferences and other settings.
+### 1. Setting macOS Defaults
 
-Open your Terminal and run the commands below:
+The macOS defaults tool interfaces directly with the macOS preferences system,
+allowing many apps to seamlessly manage settings and preferences.
+
+To configure macOS defaults, execute the following in your Terminal:
 
 ``` shell
 chmod +x ./src/macOS/macOS-defaults.sh && sh ./src/macOS/macOS-defaults.sh
 ```
 
-#### macOS Screensavers
+### 2. Discover App Store Treasures
 
-Explore our curated list of screensavers for macOS from
-[Awesome macOS Screensavers](https://github.com/agarrharr/awesome-macos-ScreenSavers).
+Navigate through a curated list of essential App Store software, all accessible
+through the Mac App Store's command-line interface.
 
-Open your Terminal and run the commands below:
-
-``` shell
-chmod +x ./src/macOS/macOS-screensavers.sh && sh ./src/macOS/macOS-screensavers.sh
-```
-
-#### App Store Softwares
-
-Explore our curated list of App Store softwares using the Mac App Store command-line interface.
-
-Open your Terminal and run the commands below:
+To start exploring and installing:
 
 ``` shell
 chmod +x ./src/macOS/macOS-appstore.sh && sh ./src/macOS/macOS-appstore.sh
 ```
 
-## Semantic Versioning Policy
+## Versioning & Updates
 
-For transparency into our release cycle and in striving to maintain backward compatibility, `maccfg` follows [semantic versioning](http://semver.org/) and [ESLint's Semantic Versioning Policy](https://github.com/eslint/eslint#semantic-versioning-policy).
+Adhering to [semantic versioning](http://semver.org/) ensures consistent
+updates. Refer to 
+[GitHub Releases](https://github.com/sebastienrousseau/maccfg/releases) for the
+changelog.
 
-## Changelog
+## How to Contribute
 
--   [GitHub Releases](https://github.com/sebastienrousseau/maccfg/releases)
+Your contributions can make this guide even better! Check our 
+[Contributing Guidelines](https://github.com/sebastienrousseau/maccfg/blob/main/.github/CONTRIBUTING.md)
+to get started.
 
-## Contributing
+## Community & Values
 
-Please read carefully through our [Contributing Guidelines](https://github.com/sebastienrousseau/maccfg/blob/main/.github/CONTRIBUTING.md) for further details on the process for submitting pull requests to us.
+Join a community that values diversity and inclusivity. Familiarize yourself
+with our [Code of Conduct](https://github.com/sebastienrousseau/maccfg/blob/main/.github/CODE-OF-CONDUCT.md).
 
-## Rules
+Our beliefs:
 
-We are committed to preserving and fostering a diverse, welcoming community. Please read our [Code of Conduct](https://github.com/sebastienrousseau/maccfg/blob/main/.github/CODE-OF-CONDUCT.md).
+-   Perfection encompasses everything.
+-   Passion transcends code.
+-   Obsession with excellence in solutions.
 
-## Our Values
+## Licensing
 
--   We believe perfection must consider everything.
--   We take our passion beyond code into our daily practices.
--   We are just obsessed about creating and delivering exceptional solutions.
+This project embraces the MIT License. View [LICENSE details](https://github.com/sebastienrousseau/maccfg/blob/main/LICENSE).
 
-## License
+## Shoutouts & Credits
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/sebastienrousseau/maccfg/blob/main/LICENSE) file for details
+[macOS Config](https://maccfg.com) is a masterpiece crafted by [Sebastien Rousseau](https://sebastienrousseau.co.uk) and other incredible [contributors](https://github.com/sebastienrousseau/maccfg/graphs/contributors).
 
-## Acknowledgements
+Crafted with ❤ in London.
 
-[macOS Config](https://maccfg.com) is beautifully crafted by these people and a bunch of awesome [contributors](https://github.com/sebastienrousseau/maccfg/graphs/contributors)
 
-| Contributors |
-|---------|
-|[![Sebastien Rousseau](https://avatars0.githubusercontent.com/u/1394998?s=117)](https://sebastienrousseau.co.uk)|
-|[Sebastien Rousseau](https://github.com/sebastienrousseau)|
-
-Made with ❤ in London.
+[00]: https://kura.pro/maccfg/images/banners/maccfg.webp "Maccfg - Mac M-Series Software Development Setup Guide"

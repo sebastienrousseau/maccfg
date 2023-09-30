@@ -6,14 +6,14 @@
 #|_| |_| |_|\__,_|\___|\___/|____/   \____\___/|_| |_|_| |_|\__, |
 #                                                           |___/
 #
-# macOS Config v0.0.2
+# macOS Config v0.0.3
 # https://maccfg.com
 #
 # Copyright (c) Sebastien Rousseau 2022. All rights reserved
 # Licensed under the MIT license
 #
 
-# Adapted from 
+# Adapted from
 # - https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 # - https://github.com/joshukraine/mac-bootstrap/blob/master/install/macos-defaults
 # - https://github.com/kevinSuttle/macOS-Defaults/blob/master/REFERENCE.md
@@ -378,7 +378,7 @@ defaults write com.apple.finder ShowStatusBar -bool true
 printf "%s\n" "Finder: Display full POSIX path as window title."
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
-# Finder: 
+# Finder:
 printf "%s\n" "Finder: Use list view in all Finder windows."
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
