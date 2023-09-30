@@ -6,20 +6,13 @@ Welcome to the ultimate guide for setting up your Mac M-Series for software
 development. Equip your Mac with the best tools and configurations to boost your
 coding experience.
 
-## What's Inside?
-
--   Essential tool installations: Homebrew, Xcode, and more.
--   Terminal & shell configurations.
--   Must-have software and Quick Look plugins.
--   Customizations to enhance your macOS experience and productivity.
-
-Dive in to transform your M-Series Mac into a developer's paradise!
+[Download maccfg ⧉][01]
 
 ## Table of Contents
 
 - [Mac M-Series Software Development Setup Guide](#mac-m-series-software-development-setup-guide)
-  - [What's Inside?](#whats-inside)
   - [Table of Contents](#table-of-contents)
+  - [What's Inside?](#whats-inside)
   - [Mac M-Series at a glance](#mac-m-series-at-a-glance)
   - [Repository Contents](#repository-contents)
   - [Setting Up Your Mac](#setting-up-your-mac)
@@ -41,6 +34,16 @@ Dive in to transform your M-Series Mac into a developer's paradise!
   - [Community \& Values](#community--values)
   - [Licensing](#licensing)
   - [Shoutouts \& Credits](#shoutouts--credits)
+
+
+## What's Inside?
+
+-   Essential tool installations: Homebrew, Xcode, and more.
+-   Terminal & shell configurations.
+-   Must-have software and Quick Look plugins.
+-   Customizations to enhance your macOS experience and productivity.
+
+Dive in to transform your M-Series Mac into a developer's paradise!
 
 ## Mac M-Series at a glance
 
@@ -252,3 +255,4 @@ Crafted with ❤ in London.
 
 
 [00]: https://kura.pro/maccfg/images/banners/maccfg.webp "Maccfg - Mac M-Series Software Development Setup Guide"
+[01]: https://github.com/sebastienrousseau/maccfg/releases "Maccfg Download"
