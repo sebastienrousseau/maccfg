@@ -45,8 +45,38 @@ jobs:
           # This will handover control about PR rejection to the GitHub side
           max-allowed-issues: 2147483647
 
+      # Codacy's CLI emits one SARIF *run* per tool in a single file, all
+      # sharing one category. Since July 2025 the CodeQL Action rejects
+      # that: "does not support uploading multiple SARIF runs with the
+      # same category". Folding the results into a single run keeps every
+      # finding (each carries its own ruleId and location) while giving
+      # the uploader the one-run-per-category shape it requires.
+      - name: Fold the SARIF runs into one
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          f = pathlib.Path("results.sarif")
+          data = json.loads(f.read_text())
+          runs = data.get("runs") or []
+          if len(runs) > 1:
+              base, *rest = runs
+              base.setdefault("results", [])
+              rules = {r.get("id"): r for r in
+                       base.get("tool", {}).get("driver", {}).get("rules", [])}
+              for r in rest:
+                  base["results"].extend(r.get("results") or [])
+                  for rule in r.get("tool", {}).get("driver", {}).get("rules", []):
+                      rules.setdefault(rule.get("id"), rule)
+              base["tool"]["driver"]["rules"] = list(rules.values())
+              base["tool"]["driver"]["name"] = "Codacy"
+              data["runs"] = [base]
+              f.write_text(json.dumps(data))
+          print(f"{len(runs)} run(s) -> {len(data.get('runs') or [])}")
+          PY
+
       # Upload the SARIF file generated in the previous step
       - name: Upload SARIF results file
         uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: results.sarif
+          category: codacy
