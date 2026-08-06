@@ -1,94 +1,94 @@
 {
-    "author": "Sebastien Rousseau <contact@maccfg.com> (https://github.com/sebastienrousseau/maccfg)",
-    "autoupdate": {
-        "fileMap": [
-            {
-                "basePath": "dist",
-                "files": [
-                    "**/*"
-                ]
-            }
-        ],
-        "source": "git",
-        "target": "git://github.com/sebastienrousseau/maccfg.git"
-    },
-    "bugs": {
-        "url": "https://github.com/sebastienrousseau/maccfg/issues"
-    },
-    "description": "A guide to getting your Mac M-Series ready for Software Development.",
-    "devDependencies": {
-        "filesizes": "^0.1.2",
-        "mkdirp": "^3.0.1",
-        "rimraf": "^6.0.1"
-    },
-    "directories": {
-        "src": "./src"
-    },
-    "engines": {
-        "node": "^10.19.0 || ^14.13.1 || >=16.0.0"
-    },
-    "files": [
-        "/COPYRIGHT",
-        "/src"
+  "author": "Sebastien Rousseau <contact@maccfg.com> (https://github.com/sebastienrousseau/maccfg)",
+  "autoupdate": {
+    "fileMap": [
+      {
+        "basePath": "dist",
+        "files": [
+          "**/*"
+        ]
+      }
     ],
-    "funding": [
-        {
-            "type": "github",
-            "url": "https://github.com/sponsors/sebastienrousseau"
-        },
-        {
-            "type": "paypal",
-            "url": "https://paypal.me/wwdseb"
-        }
-    ],
-    "homepage": "https://maccfg.com",
-    "keywords": [
-        "apple",
-        "config",
-        "configuration-management",
-        "devops",
-        "dev-tools",
-        "homebrew",
-        "mac-setup",
-        "mac",
-        "macbook-configuration",
-        "macbook-pro",
-        "macbook-setup",
-        "maccfg",
-        "macos-config",
-        "macos-setup",
-        "macos",
-        "macosx",
-        "osx-setup",
-        "preferences",
-        "setup"
-    ],
-    "license": "MIT",
-    "license_URI": "http://www.opensource.org/licenses/mit-license.php",
-    "lockfileVersion": 1,
-    "name": "@sebastienrousseau/maccfg",
-    "publishConfig": {
-        "access": "public",
-        "registry": "https://npm.pkg.github.com"
+    "source": "git",
+    "target": "git://github.com/sebastienrousseau/maccfg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sebastienrousseau/maccfg/issues"
+  },
+  "description": "A guide to getting your Mac M-Series ready for Software Development.",
+  "devDependencies": {
+    "filesizes": "^0.1.2",
+    "mkdirp": "^3.0.1",
+    "rimraf": "^6.0.1"
+  },
+  "directories": {
+    "src": "./src"
+  },
+  "engines": {
+    "node": "^10.19.0 || ^14.13.1 || >=16.0.0"
+  },
+  "files": [
+    "/COPYRIGHT",
+    "/src"
+  ],
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/sebastienrousseau"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/sebastienrousseau/maccfg.git"
-    },
-    "scripts": {
-        "build:maccfg": "pnpm run clean:dist && pnpm run create:directory && pnpm run copy:src && pnpm run copy:readme && pnpm run copy:license && pnpm run copy:makefile && pnpm run copy:copyright && pnpm run filesize:distribution",
-        "build": "pnpm run build:maccfg && cat ./package.json | grep -v '\"private\":' > dist/package.json && pnpm pack ./dist",
-        "clean:dist": "rimraf \"dist/\"",
-        "copy:copyright": "cp COPYRIGHT dist/",
-        "copy:license": "cp LICENSE dist/",
-        "copy:makefile": "cp Makefile dist/",
-        "copy:readme": "cp README.md dist/",
-        "copy:src": "cp -R ./src dist/src",
-        "create:directory": "mkdirp ./dist",
-        "filesize:distribution": "filesizes dist/ > dist/Report.txt",
-        "release:prepare": "pnpm run publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
-        "release:publish": "pnpm run publish --access public --ignore-scripts --@OWNER:registry='https://registry.npmjs.org'"
-    },
-    "type": "module",
-    "version": "0.0.3"
+    {
+      "type": "paypal",
+      "url": "https://paypal.me/wwdseb"
+    }
+  ],
+  "homepage": "https://maccfg.com",
+  "keywords": [
+    "apple",
+    "config",
+    "configuration-management",
+    "devops",
+    "dev-tools",
+    "homebrew",
+    "mac-setup",
+    "mac",
+    "macbook-configuration",
+    "macbook-pro",
+    "macbook-setup",
+    "maccfg",
+    "macos-config",
+    "macos-setup",
+    "macos",
+    "macosx",
+    "osx-setup",
+    "preferences",
+    "setup"
+  ],
+  "license": "MIT",
+  "license_URI": "http://www.opensource.org/licenses/mit-license.php",
+  "lockfileVersion": 1,
+  "name": "@sebastienrousseau/maccfg",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastienrousseau/maccfg.git"
+  },
+  "scripts": {
+    "build:maccfg": "pnpm run clean:dist && pnpm run create:directory && pnpm run copy:src && pnpm run copy:readme && pnpm run copy:license && pnpm run copy:makefile && pnpm run copy:copyright && pnpm run filesize:distribution",
+    "build": "pnpm run build:maccfg && cat ./package.json | grep -v '\"private\":' > dist/package.json && pnpm pack ./dist",
+    "clean:dist": "rimraf \"dist/\"",
+    "copy:copyright": "cp COPYRIGHT dist/",
+    "copy:license": "cp LICENSE dist/",
+    "copy:makefile": "cp Makefile dist/",
+    "copy:readme": "cp README.md dist/",
+    "copy:src": "cp -R ./src dist/src",
+    "create:directory": "mkdirp ./dist",
+    "filesize:distribution": "filesizes dist/ > dist/Report.txt",
+    "release:prepare": "pnpm run publish $(node -p \"p=require('./package.json');p.name+'-'+p.version+'.tgz'\")",
+    "release:publish": "pnpm run publish --access public --ignore-scripts --@OWNER:registry='https://registry.npmjs.org'"
+  },
+  "type": "module",
+  "version": "0.0.4"
 }
