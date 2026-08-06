@@ -55,8 +55,11 @@ jobs:
         run: |
           python3 - <<'PY'
           import json, pathlib
-          f = pathlib.Path("results.sarif")
-          data = json.loads(f.read_text())
+          src = pathlib.Path("results.sarif")
+          # Written by the Codacy container as root, so it cannot be
+          # rewritten in place — emit a separate file instead.
+          out = pathlib.Path("results-folded.sarif")
+          data = json.loads(src.read_text())
           runs = data.get("runs") or []
           if len(runs) > 1:
               base, *rest = runs
@@ -70,7 +73,7 @@ jobs:
               base["tool"]["driver"]["rules"] = list(rules.values())
               base["tool"]["driver"]["name"] = "Codacy"
               data["runs"] = [base]
-              f.write_text(json.dumps(data))
+          out.write_text(json.dumps(data))
           print(f"{len(runs)} run(s) -> {len(data.get('runs') or [])}")
           PY
 
@@ -78,5 +81,5 @@ jobs:
       - name: Upload SARIF results file
         uses: github/codeql-action/upload-sarif@v4
         with:
-          sarif_file: results.sarif
+          sarif_file: results-folded.sarif
           category: codacy
