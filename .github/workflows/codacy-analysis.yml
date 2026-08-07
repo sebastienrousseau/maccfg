@@ -16,6 +16,10 @@ name: Codacy Security Scan
 
 on: ["push"]
 
+permissions:
+  contents: read
+  security-events: write
+
 jobs:
   codacy-security-scan:
     name: Codacy Security Scan
@@ -23,11 +27,11 @@ jobs:
     steps:
       # Checkout the repository to the GitHub Actions runner
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
 
       # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis
       - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@1.1.0
+        uses: codacy/codacy-analysis-cli-action@562ee3e92b8e92df8b67e0a5ff8aa8e261919c08 # v4.4.7
         with:
           # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository
           # You can also omit the token and run the tools that support default configurations
@@ -41,8 +45,41 @@ jobs:
           # This will handover control about PR rejection to the GitHub side
           max-allowed-issues: 2147483647
 
+      # Codacy's CLI emits one SARIF *run* per tool in a single file, all
+      # sharing one category. Since July 2025 the CodeQL Action rejects
+      # that: "does not support uploading multiple SARIF runs with the
+      # same category". Folding the results into a single run keeps every
+      # finding (each carries its own ruleId and location) while giving
+      # the uploader the one-run-per-category shape it requires.
+      - name: Fold the SARIF runs into one
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          src = pathlib.Path("results.sarif")
+          # Written by the Codacy container as root, so it cannot be
+          # rewritten in place — emit a separate file instead.
+          out = pathlib.Path("results-folded.sarif")
+          data = json.loads(src.read_text())
+          runs = data.get("runs") or []
+          if len(runs) > 1:
+              base, *rest = runs
+              base.setdefault("results", [])
+              rules = {r.get("id"): r for r in
+                       base.get("tool", {}).get("driver", {}).get("rules", [])}
+              for r in rest:
+                  base["results"].extend(r.get("results") or [])
+                  for rule in r.get("tool", {}).get("driver", {}).get("rules", []):
+                      rules.setdefault(rule.get("id"), rule)
+              base["tool"]["driver"]["rules"] = list(rules.values())
+              base["tool"]["driver"]["name"] = "Codacy"
+              data["runs"] = [base]
+          out.write_text(json.dumps(data))
+          print(f"{len(runs)} run(s) -> {len(data.get('runs') or [])}")
+          PY
+
       # Upload the SARIF file generated in the previous step
       - name: Upload SARIF results file
-        uses: github/codeql-action/upload-sarif@v1
+        uses: github/codeql-action/upload-sarif@v4
         with:
-          sarif_file: results.sarif
+          sarif_file: results-folded.sarif
+          category: codacy
